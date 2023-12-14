@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube clone v1.0</title>
+
+    <!-- Tailwind css init  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- BoxIcons init -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        /* Chrome, Edge, and Safari */
+        *::-webkit-scrollbar {
+            width: 8px;
+            height: 10px !important;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 5px;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: rgba(128, 128, 128, 0.758);
+            border-radius: 14px;
+            height: 10px !important;
+        }
+    </style>
+</head>
+
+<body class="relative">
+
+    <nav class="w-full flex items-center justify-between  bg-blue-300x">
+
+        <div class="inline-flex items-center ml-4">
+            <i class='bx bx-menu text-[30px] text-gray-500'></i>
+            <a href="index.html">
+                <img class="w-[120px]" src="./assets/img/logo.svg" alt="Logo">
+            </a>
+        </div>
+
+        <!-- Search box start -->
+        <div class="inline-flex items-center relative">
+            <div class="w-[515px] relative overflow-hidden">
+                <input type="text" class="bg-transparent w-full border rounded-3xl px-5 py-2" placeholder="Search">
+                <div
+                    class="absolute inline-flex border justify-center items-center w-[60px] right-[1px] rounded-tr-3xl rounded-br-3xl bg-gray-50 h-full">
+                    <i class="bx bx-search text-lg text-gray-500"></i>
+                </div>
+            </div>
+            <div data-title="Search with your voice"
+                class="ml-8 bg-gray-100 hover:bg-gray-300 hover:before:content-[attr(data-title)] hover:before:absolute hover:before:top-[60px] hover:before:w-[160px] hover:before:text-[12px] hover:before:font-[400] hover:before:mb-1 hover:before:bg-gray-800/90 hover:before:p-1 hover:before:rounded-lg hover:before:text-white  hover:before:text-center  inline-flex justify-center cursor-pointer items-center w-[40px] h-[40px] p-4 rounded-full">
+                <i class="bx bxs-microphone"></i>
+            </div>
+        </div>
+        <!-- Search box end  -->
+
+        <div class="inline-flex items-center space-x-8 mr-12">
+            <i class='bx bx-video-plus text-2xl text-gray-500'></i>
+
+            <div class="relative">
+
+                <span
+                    class="bg-red-500 absolute px-2 text-[12px] py-[1px] top-[-8px] right-[-17px] text-white rounded-2xl">9+</span>
+
+                <i class='bx bx-bell text-2xl text-gray-500'></i>
+            </div>
+
+            <img class="w-[32px] h-[32px] rounded-full border border-blue-500" src="./assets/img/profile.jpg"
+                alt="Profile">
+        </div>
+    </nav>
+
+
+    <!-- Category start  -->
+    <div class="w-[1180px] absolute left-[17%] p-4 space-x-3 inline-flex items-center overflow-hidden">
+
+        <div class="bg-black text-white inline-flex justify-center p-1 items-center w-[40px] rounded-lg">
+            <span class="text-sm">All</span>
+        </div>
+
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[40px] rounded-lg">
+            <span class="text-sm font-[500]">Live</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Music</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">React</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[70px] rounded-lg">
+            <span class="text-sm font-[500]">Javascript</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">PHP</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Vue</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Angular</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Solid</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Astro</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Laravel</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Nuxt</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Gastby</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">MySQL</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Express</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Node</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Flutter</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Dart</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Java</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Kotlin</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">CSS</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Tailwind</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Bootsrap</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[40px] rounded-lg">
+            <span class="text-sm font-[500]">Live</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Music</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">React</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[70px] rounded-lg">
+            <span class="text-sm font-[500]">Javascript</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">PHP</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Vue</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Angular</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Solid</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Astro</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Laravel</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Nuxt</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Gastby</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">MySQL</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Express</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Node</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Flutter</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Dart</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Java</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Kotlin</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">CSS</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Tailwind</span>
+        </div>
+        <div class="bg-gray-100 text-gray-700 inline-flex justify-center p-1 items-center w-[60px] rounded-lg">
+            <span class="text-sm font-[500]">Bootsrap</span>
+        </div>
+
+    </div>
+    <!-- Category end  -->
+
+    <aside class="p-4 w-[250px] fixed left-0 h-[600px] overflow-hidden hover:overflow-y-scroll">
+        <ul>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
+                    viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block;">
+                    <g>
+                        <path d="M4 21V10.08l8-6.96 8 6.96V21h-6v-6h-4v6H4z"></path>
+                    </g>
+                </svg>
+                <span>Home</span>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                    style="pointer-events: none; display: block;">
+                    <path
+                        d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z">
+                    </path>
+                </svg>
+                <span>Shorts</span>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
+                    viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block;">
+                    <path d="M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z"></path>
+                </svg>
+                <span>Subscriptions</span>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                    style="pointer-events: none; display: block;">
+                    <path
+                        d="M10 9.35 15 12l-5 2.65zM12 7a5 5 0 105 5 5 5 0 00-5-5m0-1a6 6 0 11-6 6 6 6 0 016-6zm0-3a9 9 0 109 9 9 9 0 00-9-9m0-1A10 10 0 112 12 10 10 0 0112 2z">
+                    </path>
+                </svg>
+                <span>YouTube Music</span>
+            </li>
+        </ul>
+        <hr class="mt-4">
+        <ul>
+            <li
+                class="inline-flex items-center space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <span class="font-[500]">You</span>
+                <i class='bx bx-chevron-right mt-1 text-lg'></i>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
+                    viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block;">
+                    <g>
+                        <path d="M4 21V10.08l8-6.96 8 6.96V21h-6v-6h-4v6H4z"></path>
+                    </g>
+                </svg>
+                <span>Home</span>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                    style="pointer-events: none; display: block;">
+                    <path
+                        d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z">
+                    </path>
+                </svg>
+                <span>Shorts</span>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
+                    viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block;">
+                    <path d="M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z"></path>
+                </svg>
+                <span>Subscriptions</span>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                    style="pointer-events: none; display: block;">
+                    <path
+                        d="M10 9.35 15 12l-5 2.65zM12 7a5 5 0 105 5 5 5 0 00-5-5m0-1a6 6 0 11-6 6 6 6 0 016-6zm0-3a9 9 0 109 9 9 9 0 00-9-9m0-1A10 10 0 112 12 10 10 0 0112 2z">
+                    </path>
+                </svg>
+                <span>YouTube Music</span>
+            </li>
+        </ul>
+        <hr class="mt-4">
+        <ul>
+            <li
+                class="inline-flex items-center space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <span class="font-[500]">You</span>
+                <i class='bx bx-chevron-right mt-1 text-lg'></i>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
+                    viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block;">
+                    <g>
+                        <path d="M4 21V10.08l8-6.96 8 6.96V21h-6v-6h-4v6H4z"></path>
+                    </g>
+                </svg>
+                <span>Home</span>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                    style="pointer-events: none; display: block;">
+                    <path
+                        d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z">
+                    </path>
+                </svg>
+                <span>Shorts</span>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
+                    viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block;">
+                    <path d="M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z"></path>
+                </svg>
+                <span>Subscriptions</span>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                    style="pointer-events: none; display: block;">
+                    <path
+                        d="M10 9.35 15 12l-5 2.65zM12 7a5 5 0 105 5 5 5 0 00-5-5m0-1a6 6 0 11-6 6 6 6 0 016-6zm0-3a9 9 0 109 9 9 9 0 00-9-9m0-1A10 10 0 112 12 10 10 0 0112 2z">
+                    </path>
+                </svg>
+                <span>YouTube Music</span>
+            </li>
+        </ul>
+        <hr class="mt-4">
+        <ul>
+            <li
+                class="inline-flex items-center space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <span class="font-[500]">You</span>
+                <i class='bx bx-chevron-right mt-1 text-lg'></i>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
+                    viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block;">
+                    <g>
+                        <path d="M4 21V10.08l8-6.96 8 6.96V21h-6v-6h-4v6H4z"></path>
+                    </g>
+                </svg>
+                <span>Home</span>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                    style="pointer-events: none; display: block;">
+                    <path
+                        d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z">
+                    </path>
+                </svg>
+                <span>Shorts</span>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
+                    viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block;">
+                    <path d="M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z"></path>
+                </svg>
+                <span>Subscriptions</span>
+            </li>
+            <li
+                class="inline-flex space-x-3 cursor-pointer font-[400] text-gray-500 hover:font-[600] hover:bg-gray-100 rounded-lg p-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                    style="pointer-events: none; display: block;">
+                    <path
+                        d="M10 9.35 15 12l-5 2.65zM12 7a5 5 0 105 5 5 5 0 00-5-5m0-1a6 6 0 11-6 6 6 6 0 016-6zm0-3a9 9 0 109 9 9 9 0 00-9-9m0-1A10 10 0 112 12 10 10 0 0112 2z">
+                    </path>
+                </svg>
+                <span>YouTube Music</span>
+            </li>
+        </ul>
+        <hr class="mt-4">
+    </aside>
+
+
+
+    <!-- Script init  -->
+    <script src="./app.js"></script>
+</body>
+
+</html>
